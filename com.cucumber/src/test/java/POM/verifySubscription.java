@@ -1,0 +1,48 @@
+package POM;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class verifySubscription {
+	
+	WebDriver d;
+	public verifySubscription(WebDriver driver1) {
+		d=driver1;
+		PageFactory.initElements( driver1,this);
+
+}
+	
+	@FindBy(xpath="//a[@href=\"/view_cart\"]")
+	@CacheLookup
+	WebElement cart;
+	
+	@FindBy(xpath="//div[@class='single-widget']/h2")
+	@CacheLookup
+	WebElement verify;
+	
+	@FindBy(id="susbscribe_email")
+	@CacheLookup
+	WebElement email;
+	
+	@FindBy(xpath="//button[@id='subscribe']")
+	@CacheLookup
+	WebElement next;
+	
+	public void viewCart() {
+		cart.click();
+	}
+	
+	public String verifyingText() {
+		return verify.getText();
+	}
+	public void enterEmail() {
+		email.sendKeys("shahzoor18@gmail.com");
+	}
+
+	public void nextArrow() {
+		next.click();
+	}
+}
