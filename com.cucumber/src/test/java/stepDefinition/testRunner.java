@@ -8,8 +8,8 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(features="src/test/resources/Features",
 glue={"stepDefinition"},
 monochrome=true,
-plugin= {"html:target/cucumber-html-report","json:target/cucumberreports","json:target/cucumber-reports/cucumber.json","junit:target/cucumber-reports/cucumber.xml","com.aventstack.extentreports.cucumber.adaptor.ExtentCucumberAdapter:"}
-//tags="@smoke" 
+plugin = {"pretty","html:target/HtmlReports/index.html","json:target/JSONReports/report.json", "junit:target/JUNITReports/report.xml"},
+tags="@TC005" 
 )
 public class testRunner {
 

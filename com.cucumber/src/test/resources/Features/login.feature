@@ -1,6 +1,6 @@
 Feature: Login with correct email and password.
  
- 
+ @TC001
   Scenario: Verify Logged in
   Given Browser is open
   And Navigate to url 
@@ -13,6 +13,7 @@ Feature: Login with correct email and password.
   Then Click delete account button
   And Verify account deleted
   
+@TC002
   Scenario: Register user with existing mails
   Given Browser is open
   And Navigate to url
@@ -23,7 +24,7 @@ Feature: Login with correct email and password.
   Then Click Signup button
   And Verify error message is visible
   
-  
+#add
   Scenario: Verify all products and product deatil page
   Given Browser is open
   And Navigate to url
@@ -35,7 +36,7 @@ Feature: Login with correct email and password.
   And User landed to product detail page
   And Verify the detail is visible
   
-  
+  @TC004
   Scenario: Verify Subscription in home page
   Given Browser is open
   And Navigate to url
@@ -46,7 +47,8 @@ Feature: Login with correct email and password.
   Then Email is entered and arrow button is clicked
   And Verify the message
   
-   @smoke
+  #add 
+  @TC005
   Scenario: Place order
   Given Browser is open
   And Navigate to url
@@ -69,7 +71,7 @@ Feature: Login with correct email and password.
   And Click Delete Account btn
   And Verify Account is deleted
   
-  
+   
   Scenario: Remove products from cart
   Given Browser is open
   And Navigate to url
@@ -95,6 +97,7 @@ Feature: Login with correct email and password.
   And Again go to Cart page
   And  Verify that those products are visible in cart after login as well
   
+  
   Scenario: Add to cart from recommended items
   Given Browser is open
   And Navigate to url
@@ -103,6 +106,7 @@ Feature: Login with correct email and password.
   Then CLick on Add to cart on Recommended products 
   And CLick on view cart
   And Verify product is visible in cart
+  
   
   Scenario: Add to cart from recommended items
   Given Browser is open
