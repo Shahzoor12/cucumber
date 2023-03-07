@@ -13,7 +13,7 @@ Feature: Login with correct email and password.
   Then Click delete account button
   And Verify account deleted
   
-@TC002
+  @TC002
   Scenario: Register user with existing mails
   Given Browser is open
   And Navigate to url
@@ -70,7 +70,7 @@ Feature: Login with correct email and password.
   And Click Delete Account btn
   And Verify Account is deleted
   
-   @TC006
+  @TC006
   Scenario: Remove products from cart
   Given Browser is open
   And Navigate to url
@@ -107,7 +107,7 @@ Feature: Login with correct email and password.
   And Verify product is visible in cart
   
   @TC009
-  Scenario: Add to cart from recommended items
+  Scenario: Verify scroll up and down functionality
   Given Browser is open
   And Navigate to url
   And verify home page is visible

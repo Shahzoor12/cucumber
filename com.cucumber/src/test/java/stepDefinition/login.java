@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.concurrent.TimeUnit;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -37,11 +38,11 @@ public class login {
 	public recommendedItems rec;
 	public scrollUp scr;
 
+	//TC001//
 	@SuppressWarnings("deprecation")
 	@Given("Browser is open")
 	public void browser_is_open() {
 
-		System.setProperty("webdriver.chrome.driver","C:/Users/SHAGAFOO/git/repository/com.cucumber/src/test/resources/driver/chromedriver.exe");
 		driver=new ChromeDriver();
 		log=new usernameandpass(driver);
 		user=new registerUser(driver);
@@ -118,7 +119,7 @@ public class login {
 		assertEquals(accountDeleted,expectedText);
 	}
 
-	                                           //TC005//
+    //TC002//
 
 	@When("Singup button is clicked")
 	public void singup_button_is_clicked() {
@@ -154,7 +155,7 @@ public class login {
 		assertEquals(errorMessage,expectedMessage);
 	}
 	
-	//TC008//
+	//TC003//
 	
 	@When("Products button is clicked")
 	public void products_button_is_clicked() {
@@ -201,7 +202,7 @@ public class login {
 	}
 	
 	
-	//TC011//
+	//TC004//
 	
 	@When("Cart button is clicked")
 	public void cart_button_is_clicked() {
@@ -233,7 +234,7 @@ public class login {
 	    System.out.println("Hola");
 	}
 
-	//TC014//
+	//TC005//
 	
 	@And("Add product to cart")
 	public void add_product_to_cart() {
@@ -324,7 +325,7 @@ public class login {
 	    
 	}
 	
-	//TC017//
+	//TC006//
 	
 	@When("Product is added to cart")
 	public void product_is_added_to_cart() {
@@ -345,7 +346,7 @@ public class login {
 	    driver.quit();
 	}
 	
-	//TC020//
+	//TC0007//
 	
 	@And("Enter product name in search input and click search button")
 	public void enter_product_name_in_search_input_and_click_search_button() {
@@ -381,7 +382,7 @@ public class login {
 	    ver.verifyCart();
 	}
 	
-	//TC022//
+	//TC008//
 	
 	@And("Scroll to bottom of page")
 	public void scroll_to_bottom_of_page() {
@@ -390,7 +391,7 @@ public class login {
 	}
 	@And("Verify Recommended items are visible")
 	public void verify_recommended_items_are_visible() {
-	    rec.verifyRecommendedItems();
+	    rec.verifyRecommendedItems();	   
 	}
 	@Then("CLick on Add to cart on Recommended products")
 	public void c_lick_on_add_to_cart_on_recommended_products() {
@@ -405,7 +406,7 @@ public class login {
 	    rec.prodVisibileInCart();
 	}
 
-	//TC022//
+	//TC009//
 	
 	@Then("Click on arrow to move upwards")
 	public void click_on_arrow_to_move_upwards() {
