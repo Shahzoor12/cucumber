@@ -10,19 +10,19 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import POM.recommendedItems;
-import POM.registerUser;
-import POM.registerWhileCheckout;
-import POM.removeProduct;
-import POM.scrollUp;
-import POM.usernameandpass;
-import POM.verifyAfterLogin;
-import POM.verifyProduct;
-import POM.verifySubscription;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pages.recommendedItems;
+import pages.registerUser;
+import pages.registerWhileCheckout;
+import pages.removeProduct;
+import pages.scrollUp;
+import pages.usernameandpass;
+import pages.verifyAfterLogin;
+import pages.verifyProduct;
+import pages.verifySubscription;
 
 public class login {
 
@@ -101,7 +101,7 @@ public class login {
 
 	@And("verify Loggedin as username is visible")
 	public void verify_loggedin_as_username_is_visible() {
-		driver.findElement(By.xpath("//i[@class='fa fa-user']")).isDisplayed();	
+		log.loginIsDisplayed();	
 	}
 
 
@@ -168,7 +168,7 @@ public class login {
 		String actualText=prod.verifyPageLoded();
 		String expectedText="ALL PRODUCTS";
 		
-		//assertEquals(expectedText, actualText);
+		assertEquals(expectedText, actualText);
 	}
 
 	@And("The products list is visible")

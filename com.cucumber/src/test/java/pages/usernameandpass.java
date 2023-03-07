@@ -1,4 +1,4 @@
-package POM;
+package pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -30,6 +30,10 @@ public class usernameandpass {
 	@FindBy(xpath="//button[@data-qa='login-button']")
 	@CacheLookup
 	WebElement log;
+	
+	@FindBy(xpath="//i[@class='fa fa-user']")
+	@CacheLookup
+	WebElement loginDisplayed;
 
 	@FindBy(xpath="//div[@class='login-form']/h2")
 	@CacheLookup
@@ -69,6 +73,9 @@ public class usernameandpass {
 
 	public void loginButtonClicked() {
 		loginButton.click();
+	}
+	public void loginIsDisplayed() {
+		loginDisplayed.isDisplayed();
 	}
 	public void clickDeleteButton() {
 		deleteButton.click();
