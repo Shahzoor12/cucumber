@@ -7,10 +7,13 @@ import java.util.concurrent.TimeUnit;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -117,6 +120,8 @@ public class login {
 		String accountDeleted=log.accountDeleted();
 		String expectedText="ACCOUNT DELETED!";
 		assertEquals(accountDeleted,expectedText);
+		
+		driver.quit();
 	}
 
     //TC002//
@@ -151,8 +156,9 @@ public class login {
 	public void verify_error_message_is_visible() {
 		String errorMessage=user.errorMessage();
 		String expectedMessage="Email Address already exist!";
-
-		assertEquals(errorMessage,expectedMessage);
+		 Assert.assertTrue("Email does not exist", errorMessage.equals(expectedMessage));
+		 
+		 driver.quit();
 	}
 	
 	//TC003//
@@ -168,8 +174,8 @@ public class login {
 	    
 		String actualText=prod.verifyPageLoded();
 		String expectedText="ALL PRODUCTS";
+	    Assert.assertTrue("All products not loaded", actualText.equals(expectedText));
 		
-		assertEquals(expectedText, actualText);
 	}
 
 	@And("The products list is visible")
@@ -189,8 +195,7 @@ public class login {
 	public void user_landed_to_product_detail_page() {
 	    String webUrl=driver.getCurrentUrl();
 	    String expectedUrl="https://automationexercise.com/product_details/1";
-	    
-	    assertEquals(expectedUrl,webUrl);
+	    Assert.assertTrue("Url is not loaded", webUrl.equals(expectedUrl));
 	}
 
 	@And("Verify the detail is visible")
@@ -199,6 +204,8 @@ public class login {
 		prod.dressType();
 		prod.dressCategory();
 		prod.dressCost();
+		
+		driver.quit();
 	}
 	
 	
@@ -231,7 +238,9 @@ public class login {
 
 	@And("Verify the message")
 	public void verify_the_message() {
-	    System.out.println("Hola");
+	    sub.verifyEmial();
+	    
+	    driver.quit();
 	}
 
 	//TC005//
@@ -323,6 +332,8 @@ public class login {
 	    
 	    assertEquals(expectedMsg,actualMsg);
 	    
+	    driver.quit();
+	    
 	}
 	
 	//TC006//
@@ -343,6 +354,8 @@ public class login {
 	@And("Verify the product has been removed")
 	public void verify_the_product_has_been_removed() {
 	    rem.verifyProductRemoved();
+	    driver.quit();
+	    
 	    driver.quit();
 	}
 	
@@ -380,6 +393,8 @@ public class login {
 	@And("Verify that those products are visible in cart after login as well")
 	public void verify_that_those_products_are_visible_in_cart_after_login_as_well() {
 	    ver.verifyCart();
+	    
+	    driver.quit();
 	}
 	
 	//TC008//
@@ -404,6 +419,8 @@ public class login {
 	@And("Verify product is visible in cart")
 	public void verify_product_is_visible_in_cart() {
 	    rec.prodVisibileInCart();
+	    
+	    driver.quit();
 	}
 
 	//TC009//
@@ -415,13 +432,37 @@ public class login {
 	@And("Verify that page is scrolled up")
 	public void verify_that_page_is_scrolled_up() {
 	    scr.verifyScrolledUp();
+	    
+	    driver.quit();
 	}
+	
+		//TO TAKE SCREENSHOT//
+		@After(order = 1)
+		public void takeScraenshotOnFailure(io.cucumber.java.Scenario scenario) {
+
+		if (scenario.isFailed()) {
+
+		TakesScreenshot ts = (TakesScreenshot) driver;
+
+		byte[] src = ts.getScreenshotAs(OutputType.BYTES);
+		scenario.attach(src, "image/png", "screenshot");
+		}
+
+		}
+
+		@After(order = 0)
+		public void tearDown() {
+		driver.close();
+
+		}
+		}
 
 
+
 	
 	
 	
-}
+
 
 
 

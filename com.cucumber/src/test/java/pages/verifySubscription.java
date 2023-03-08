@@ -31,6 +31,10 @@ public class verifySubscription {
 	@CacheLookup
 	WebElement next;
 	
+	@FindBy(xpath="//p[@class=\"text-center\"]/b")
+	@CacheLookup
+	WebElement verified;
+	
 	public void viewCart() {
 		cart.click();
 	}
@@ -44,5 +48,8 @@ public class verifySubscription {
 
 	public void nextArrow() {
 		next.click();
+	}
+	public void verifyEmial() {
+		verified.isDisplayed();
 	}
 }
