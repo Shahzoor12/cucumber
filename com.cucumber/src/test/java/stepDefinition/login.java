@@ -120,8 +120,7 @@ public class login {
 		String accountDeleted=log.accountDeleted();
 		String expectedText="ACCOUNT DELETED!";
 		assertEquals(accountDeleted,expectedText);
-		
-		driver.quit();
+	
 	}
 
     //TC002//
@@ -157,8 +156,7 @@ public class login {
 		String errorMessage=user.errorMessage();
 		String expectedMessage="Email Address already exist!";
 		 Assert.assertTrue("Email does not exist", errorMessage.equals(expectedMessage));
-		 
-		 driver.quit();
+
 	}
 	
 	//TC003//
@@ -204,8 +202,7 @@ public class login {
 		prod.dressType();
 		prod.dressCategory();
 		prod.dressCost();
-		
-		driver.quit();
+
 	}
 	
 	
@@ -225,7 +222,7 @@ public class login {
 	@And("Verify text SUBSCRIPTION")
 	public void verify_text_subscription() {
 	    String actualText=sub.verifyingText();
-	    String expectedText="SUBSCRIPTION";
+	    String expectedText="SUBSCRIPION";
 	    
 	    assertEquals(expectedText,actualText);
 	}
@@ -239,8 +236,7 @@ public class login {
 	@And("Verify the message")
 	public void verify_the_message() {
 	    sub.verifyEmial();
-	    
-	    driver.quit();
+
 	}
 
 	//TC005//
@@ -331,8 +327,7 @@ public class login {
 	    String expectedMsg="ACCOUNT DELETED!";
 	    
 	    assertEquals(expectedMsg,actualMsg);
-	    
-	    driver.quit();
+
 	    
 	}
 	
@@ -354,9 +349,7 @@ public class login {
 	@And("Verify the product has been removed")
 	public void verify_the_product_has_been_removed() {
 	    rem.verifyProductRemoved();
-	    driver.quit();
-	    
-	    driver.quit();
+
 	}
 	
 	//TC0007//
@@ -393,8 +386,7 @@ public class login {
 	@And("Verify that those products are visible in cart after login as well")
 	public void verify_that_those_products_are_visible_in_cart_after_login_as_well() {
 	    ver.verifyCart();
-	    
-	    driver.quit();
+
 	}
 	
 	//TC008//
@@ -419,8 +411,7 @@ public class login {
 	@And("Verify product is visible in cart")
 	public void verify_product_is_visible_in_cart() {
 	    rec.prodVisibileInCart();
-	    
-	    driver.quit();
+
 	}
 
 	//TC009//
@@ -432,8 +423,7 @@ public class login {
 	@And("Verify that page is scrolled up")
 	public void verify_that_page_is_scrolled_up() {
 	    scr.verifyScrolledUp();
-	    
-	    driver.quit();
+
 	}
 	
 		//TO TAKE SCREENSHOT//
@@ -455,6 +445,13 @@ public class login {
 		driver.close();
 
 		}
+		
+//		@After
+//		public void driverQuit() {
+//			driver.quit();
+//		}
+		
+		
 		}
 
 
