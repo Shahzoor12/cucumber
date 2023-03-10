@@ -6,9 +6,9 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class scrollUp {
+public class brands {
 	WebDriver d;
-	public scrollUp(WebDriver driver1) {
+	public brands(WebDriver driver1) {
 		d=driver1;
 		PageFactory.initElements( driver1,this);
 

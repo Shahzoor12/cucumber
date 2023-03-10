@@ -6,10 +6,10 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class verifySubscription {
+public class featuresItems {
 	
 	WebDriver d;
-	public verifySubscription(WebDriver driver1) {
+	public featuresItems(WebDriver driver1) {
 		d=driver1;
 		PageFactory.initElements( driver1,this);
 

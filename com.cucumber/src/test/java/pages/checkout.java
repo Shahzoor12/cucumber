@@ -7,10 +7,10 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class registerWhileCheckout {
+public class checkout {
 	
 	WebDriver d;
-	public registerWhileCheckout(WebDriver driver1) {
+	public checkout(WebDriver driver1) {
 		d=driver1;
 		PageFactory.initElements( driver1,this);
 

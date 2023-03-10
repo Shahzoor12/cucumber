@@ -7,11 +7,11 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class verifyAfterLogin {
+public class searchProduct {
 	
 	
 	WebDriver d;
-	public verifyAfterLogin(WebDriver driver1) {
+	public searchProduct(WebDriver driver1) {
 		d=driver1;
 		PageFactory.initElements( driver1,this);
 

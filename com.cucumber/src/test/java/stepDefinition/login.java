@@ -19,27 +19,27 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.recommendedItems;
-import pages.registerUser;
-import pages.registerWhileCheckout;
-import pages.removeProduct;
-import pages.scrollUp;
-import pages.usernameandpass;
-import pages.verifyAfterLogin;
-import pages.verifyProduct;
-import pages.verifySubscription;
+import pages.userSignup;
+import pages.checkout;
+import pages.shoppingCart;
+import pages.brands;
+import pages.userLogin;
+import pages.searchProduct;
+import pages.allProducts;
+import pages.featuresItems;
 
 public class login {
 
 	public WebDriver driver;
-	public usernameandpass log;
-	public registerUser user;
-	public verifyProduct prod;
-	public verifySubscription sub;
-	public registerWhileCheckout reg;
-	public removeProduct rem;
-	public verifyAfterLogin ver;
+	public userLogin log;
+	public userSignup user;
+	public allProducts prod;
+	public featuresItems sub;
+	public checkout reg;
+	public shoppingCart rem;
+	public searchProduct ver;
 	public recommendedItems rec;
-	public scrollUp scr;
+	public brands scr;
 
 	//TC001//
 	@SuppressWarnings("deprecation")
@@ -47,15 +47,15 @@ public class login {
 	public void browser_is_open() {
 
 		driver=new ChromeDriver();
-		log=new usernameandpass(driver);
-		user=new registerUser(driver);
-		prod=new verifyProduct(driver);
-		sub=new verifySubscription(driver);
-		reg=new registerWhileCheckout(driver);
-		rem=new removeProduct(driver);
-		ver=new verifyAfterLogin(driver);
+		log=new userLogin(driver);
+		user=new userSignup(driver);
+		prod=new allProducts(driver);
+		sub=new featuresItems(driver);
+		reg=new checkout(driver);
+		rem=new shoppingCart(driver);
+		ver=new searchProduct(driver);
 		rec=new recommendedItems(driver);
-		scr=new scrollUp(driver);
+		scr=new brands(driver);
 
 		driver.manage().timeouts().implicitlyWait(60,TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(60,TimeUnit.SECONDS);
@@ -222,7 +222,7 @@ public class login {
 	@And("Verify text SUBSCRIPTION")
 	public void verify_text_subscription() {
 	    String actualText=sub.verifyingText();
-	    String expectedText="SUBSCRIPION";
+	    String expectedText="SUBSCRIPTION";
 	    
 	    assertEquals(expectedText,actualText);
 	}

@@ -6,10 +6,10 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class registerUser {
+public class userSignup {
 	
 	WebDriver d;
-	public registerUser(WebDriver driver1) {
+	public userSignup(WebDriver driver1) {
 		d=driver1;
 		PageFactory.initElements( driver1,this);
 

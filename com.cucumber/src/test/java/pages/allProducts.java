@@ -6,10 +6,10 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class verifyProduct {
+public class allProducts {
 	
 	WebDriver d;
-	public verifyProduct(WebDriver driver1) {
+	public allProducts(WebDriver driver1) {
 		d=driver1;
 		PageFactory.initElements( driver1,this);
 

@@ -6,10 +6,10 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class removeProduct {
+public class shoppingCart {
 	
 	WebDriver d;
-	public removeProduct(WebDriver driver1) {
+	public shoppingCart(WebDriver driver1) {
 		d=driver1;
 		PageFactory.initElements( driver1,this);
 
