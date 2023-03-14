@@ -1,7 +1,7 @@
 # Selenium Java Project(Cucumber Framework)
 
 Prerequisites:
-Have java installed
+Have java installed, 
 Have maven installed
 
 Description:
