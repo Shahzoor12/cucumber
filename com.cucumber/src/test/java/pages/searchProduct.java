@@ -7,6 +7,8 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import read.readSearchProd;
+
 public class searchProduct {
 	
 	
@@ -19,6 +21,7 @@ public class searchProduct {
 	@FindBy(id="search_product")
 	@CacheLookup
 	WebElement input;
+	//By input=By.xpath("search_product");
 	
 	@FindBy(xpath="//i[@class='fa fa-search']")
 	@CacheLookup
@@ -60,8 +63,13 @@ public class searchProduct {
 	@CacheLookup
 	WebElement logVerify;
 	
+	 static final readSearchProd sp=new readSearchProd();
+	 String seacrhT=sp.getSearchText();
+	 String mialId=sp.getMail();
+	 String pass=sp.getPassW();
+	
 	public void enterNameAndSearch() {
-		input.sendKeys("frozen tops for kids");
+		input.sendKeys(seacrhT);
 		search.click();
 	}
 	public void verifyProductVisible() {

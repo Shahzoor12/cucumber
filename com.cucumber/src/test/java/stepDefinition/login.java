@@ -12,21 +12,22 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pages.recommendedItems;
-import pages.userSignup;
-import pages.checkout;
-import pages.shoppingCart;
-import pages.brands;
-import pages.userLogin;
-import pages.searchProduct;
 import pages.allProducts;
+import pages.brands;
+import pages.checkout;
 import pages.featuresItems;
+import pages.recommendedItems;
+import pages.searchProduct;
+import pages.shoppingCart;
+import pages.userLogin;
+import pages.userSignup;
 
 public class login {
 
@@ -46,7 +47,13 @@ public class login {
 	@Given("Browser is open")
 	public void browser_is_open() {
 
-		driver=new ChromeDriver();
+		//driver=new ChromeDriver();
+		ChromeOptions options = new ChromeOptions();
+		System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\driver\\chromedriver.exe");
+		options.addArguments("--remote-allow-origins=*");
+		driver = new ChromeDriver(options);
+		//driver=new Edge
+		
 		log=new userLogin(driver);
 		user=new userSignup(driver);
 		prod=new allProducts(driver);
