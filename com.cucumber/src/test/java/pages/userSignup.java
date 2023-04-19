@@ -34,7 +34,7 @@ public class userSignup {
 	@CacheLookup
 	WebElement verification;
 	
-	public void signupButton() {
+	public void signupButton()  {
 		signup.click();
 	}
 	
