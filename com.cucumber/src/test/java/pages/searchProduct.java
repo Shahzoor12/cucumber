@@ -21,7 +21,6 @@ public class searchProduct {
 	@FindBy(id="search_product")
 	@CacheLookup
 	WebElement input;
-	//By input=By.xpath("search_product");
 	
 	@FindBy(xpath="//i[@class='fa fa-search']")
 	@CacheLookup
@@ -88,8 +87,8 @@ public class searchProduct {
 	}
 	public void login() {
 		log.click();
-		d.findElement(By.xpath("//input[@data-qa=\"login-email\"]")).sendKeys("sg@gmail.com");
-		d.findElement(By.xpath("//input[@data-qa=\"login-password\"]")).sendKeys("123");
+		d.findElement(By.xpath("//input[@data-qa=\"login-email\"]")).sendKeys(mialId);
+		d.findElement(By.xpath("//input[@data-qa=\"login-password\"]")).sendKeys(pass);
 		d.findElement(By.xpath("//button[@data-qa=\"login-button\"]")).click();
 	} 
 	public void cart() {
