@@ -63,7 +63,7 @@ public class searchProduct {
 	WebElement logVerify;
 	
 	 static final readSearchProd sp=new readSearchProd();
-	 String seacrhT=sp.getSearchText();
+	 String  seacrhT=sp.getSearchText();
 	 String mialId=sp.getMail();
 	 String pass=sp.getPassW();
 	
